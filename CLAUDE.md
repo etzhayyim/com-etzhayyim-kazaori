@@ -1,4 +1,4 @@
-# 20-actors/kazaori — CLAUDE.md
+# com-etzhayyim-kazaori — CLAUDE.md
 
 ## Identity
 
@@ -154,19 +154,16 @@ cycle.
 
 R1 smoke test (when cells created):
 ```bash
-cd kotoba-lang/kotodama-py
+cd "${KOTOTAMA_REPO:-../../kotoba-lang/kototama}"
 python -c "from kotodama.cells.kazaori_emergency_declaration import _r0_marker" 2>&1 | grep "R0 scaffold"
 ```
 
 ## Related Files
 
-- `/20-actors/kazaori/manifest.jsonld`
-- `/20-actors/kazaori/README.md`
-- `/00-contracts/lexicons/com/etzhayyim/kazaori/` (6 Lexicons + README)
-- `/90-docs/adr/2605263200-kazaori-disaster-response-tier-b-actor-r0.md`
-- `/90-docs/adr/2605192315-etzhayyim-transparent-force-authorization.md` — G5 + N1 force-separation
-- `/90-docs/adr/2605263100-mizuho-water-sanitation-tier-b-actor-r0.md` — G5 carve-out coordination
-- `/90-docs/adr/2605262700-chigiri-legal-procedure-tier-b-actor-r0.md` — declaration procedural attestation
+- `manifest.edn`, `identity.edn`, and `dependencies.edn`
+- `lex/` canonical EDN schemas; `wire/` external JSON representations
+- root ADR checkout pinned by `dependencies.edn`
+- flat west sibling actor repositories under `orgs/etzhayyim/com-etzhayyim-*`
 - `/CHARTER-RIDER.md` §2(e) + §2(c) — G4 + G6 sources
 - `/CLAUDE.md` — Status table row 72
 - Sphere Handbook (Sphere Standards) — open-publication reference

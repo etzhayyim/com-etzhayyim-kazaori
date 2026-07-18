@@ -2,7 +2,8 @@
 
 Per ADR-2605263200 (kazaori CIVILIAN-ONLY disaster-coordination substrate) +
 the G14 verified-source-only discipline. Every
-`com.etzhayyim.kazaori.disasterAgency` record in `registry/agencies.seed.json`
+`com.etzhayyim.kazaori.disasterAgency` record in canonical
+`registry/agencies.seed.edn` (`wire/agencies.seed.json` is external wire data)
 ships `verificationStatus = unverified-seed`. This file documents how an entry
 is moved through the three tiers — the human/Council checks that gate any
 downstream routing/surfacing of an agency entry.
@@ -110,7 +111,7 @@ are routing scaffolds.
 
 ## Machine-enforced floor
 
-`70-tools/scripts/audit/test_kazaori_registry_seed.py` pins (fail-closed): the
+`test/kazaori/registry_seed_test.clj` pins (fail-closed): the
 file parses + `agencies` non-empty; `agencyId` unique; **every** entry
 `unverified-seed` (G14); every entry has a non-empty http(s) `accessUrl` +
 `provenance` + ISO-8601 `lastVerified`; ≥12 distinct jurisdictions; every

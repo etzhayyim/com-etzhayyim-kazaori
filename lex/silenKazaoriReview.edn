@@ -1,0 +1,96 @@
+{"lexicon" 1,
+ "id" "com.etzhayyim.kazaori.silenKazaoriReview",
+ "description"
+ "Post-emergency Council review. MANDATORY within 90 days of emergency-lifting. G9 STRUCTURAL: sphereCompliance attested per emergency. G8 STRUCTURAL: every carve-out used during emergency audited via carveOutAuditEntries $ref array. G6 STRUCTURAL: surveillancePenetrationPct=0 const. Council Lv6+ ≥3 attestation required.",
+ "defs"
+ {"main"
+  {"type" "record",
+   "key" "tid",
+   "record"
+   {"type" "object",
+    "required"
+    ["createdAt"
+     "emergencyDeclarationCid"
+     "reviewCompletedWithin90DaysOfLifting"
+     "sphereCompliance"
+     "carveOutAuditEntries"
+     "surveillancePenetrationPct"
+     "civilianOnlyCompliance"
+     "councilAttestations"],
+    "properties"
+    {"carveOutAuditEntries"
+     {"type" "array",
+      "items" {"type" "ref", "ref" "#carveOutAuditEntry"}},
+     "commercialDisasterMgmtSoftwarePenetrationPct"
+     {"type" "integer",
+      "const" 0,
+      "description"
+      "G4 STRUCTURAL: const 0; no Veoci / NC4 / Crisis Track / Everbridge / OnSolve / SAP DR / Microsoft DR Hub / IBM Crisis Response"},
+     "totalDamageAssessments" {"type" "integer"},
+     "reviewPeriodEndUtc" {"type" "string", "format" "datetime"},
+     "sphereCompliance"
+     {"type" "object",
+      "required"
+      ["shelterAttested"
+       "waterAttested"
+       "foodAttested"
+       "healthAttested"
+       "protectionAttested"],
+      "properties"
+      {"shelterAttested" {"type" "boolean"},
+       "waterAttested" {"type" "boolean"},
+       "foodAttested" {"type" "boolean"},
+       "healthAttested" {"type" "boolean"},
+       "protectionAttested" {"type" "boolean"},
+       "deviationReportCid" {"type" "string"}}},
+     "totalSupplyDispatches" {"type" "integer"},
+     "createdAt" {"type" "string", "format" "datetime"},
+     "responderVocationFlowCompliantRatioPctIntegerHundredths"
+     {"type" "integer",
+      "const" 10000,
+      "description"
+      "G12 STRUCTURAL: const 10000; all responders were vocation-flow L5 stewards"},
+     "reviewCompletedWithin90DaysOfLifting"
+     {"type" "boolean",
+      "const" true,
+      "description"
+      "STRUCTURAL: review MUST complete within 90 days of emergency-lifting"},
+     "ipfsPinCid" {"type" "string"},
+     "lessonsLearnedCid" {"type" "string"},
+     "surveillancePenetrationPct"
+     {"type" "integer",
+      "const" 0,
+      "description"
+      "G6 STRUCTURAL: const 0; no surveillance-based monitoring used during emergency"},
+     "emergencyDeclarationCid" {"type" "string"},
+     "publishedAtMstUri" {"type" "string"},
+     "totalEvacuationCheckIns" {"type" "integer"},
+     "civilianOnlyCompliance"
+     {"type" "boolean",
+      "const" true,
+      "description"
+      "G5 STRUCTURAL: const true; no armed force coordination during emergency"},
+     "reviewPeriodStartUtc" {"type" "string", "format" "datetime"},
+     "councilAttestations"
+     {"type" "array", "items" {"type" "string"}, "minLength" 3}}}},
+  "carveOutAuditEntry"
+  {"type" "object",
+   "required" ["carveOutLogCid" "gateCarved" "outcomeAssessment"],
+   "properties"
+   {"carveOutLogCid" {"type" "string"},
+    "gateCarved" {"type" "string"},
+    "justifiedInRetrospect" {"type" "boolean"},
+    "outcomeAssessment"
+    {"type" "string",
+     "knownValues"
+     ["fully-justified"
+      "partially-justified"
+      "unjustified"
+      "never-activated"]},
+    "recommendationForFutureEmergency"
+    {"type" "string",
+     "knownValues"
+     ["preserve-as-precedent"
+      "narrow-scope"
+      "tighten-attestation"
+      "deprecate"]}}}}}

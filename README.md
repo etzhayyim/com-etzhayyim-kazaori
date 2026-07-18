@@ -57,7 +57,8 @@ disasters that come, and (b) the response that follows.
 
 ## 6 Pregel Cells (R0 path-reserved)
 
-All cells path-reserved under `kotoba-lang/kotodama-cells/kazaori_*/`.
+All runtime cells are resolved from the flat west sibling
+`orgs/kotoba-lang/kototama` (override with `KOTOTAMA_REPO`).
 Cell modules created at R1 ratification, import-time
 `RuntimeError("kazaori R0 scaffold: activate via Council ADR + R1 ratification + Sphere Standards baseline + ≥1 community-pilot tabletop drill")`.
 
@@ -81,7 +82,8 @@ Cell modules created at R1 ratification, import-time
 | `emergencyCarveOutLog` | Per-carve-out activation log; gate carved + Council attestation + auto-revoke timestamp; G8 structural |
 | `silenKazaoriReview` | Post-emergency Council review; Sphere compliance + carve-out audit + Wellbecoming preservation |
 
-See `/00-contracts/lexicons/com/etzhayyim/kazaori/README.md`.
+Canonical actor-owned schemas live in `lex/*.edn`; external JSON wire shapes
+live in `wire/*.json`.
 
 ## Constitutional Gates (G1–G12)
 
@@ -111,11 +113,8 @@ See ADR-2605263200 §6.
 
 ## Related Files
 
-- `/20-actors/kazaori/manifest.jsonld`
-- `/20-actors/kazaori/CLAUDE.md`
-- `/00-contracts/lexicons/com/etzhayyim/kazaori/` (6 Lexicons + README)
-- `/90-docs/adr/2605263200-kazaori-disaster-response-tier-b-actor-r0.md` — Master ADR
-- `/90-docs/adr/2605192315-etzhayyim-transparent-force-authorization.md` — G5 + N1 separation
-- `/90-docs/adr/2605263100-mizuho-water-sanitation-tier-b-actor-r0.md` — G5 carve-out coordination
+- `manifest.edn`, `identity.edn`, and `dependencies.edn`
+- `lex/` (6 canonical EDN Lexicons) and `wire/` (external JSON)
+- root ADR checkout pinned by `dependencies.edn` — Master ADR and constitutional references
 - `/CHARTER-RIDER.md` §2(e) + §2(c) — G4 + G6 sources
 - `/CLAUDE.md` — Status table row 72
